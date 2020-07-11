@@ -1,6 +1,6 @@
 [package]
 name = "demon"
-version = "0.1.0"
+version = "0.0.1"
 authors = ["rdigua <digua@163.com>"]
 edition = "2018"
 
