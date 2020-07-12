@@ -1,7 +1,8 @@
 ///Functions of project.
 //use std::fmt;
 use std::path::Path;
-pub enum DirFile{
+
+pub enum DirFile {
     None,
     Directory,
     File,
@@ -52,26 +53,22 @@ pub fn vec_u8_u32(s: Vec<u8>) -> Option<Vec<u32>> {
         Some(r)
     }
 }
+
 /// The directory is or not exist;
-pub fn exist_dir(p: &str) -> bool {
-    Path::new(p).exists() && Path::new(p).is_dir()
-}
+//pub fn exist_dir(p: &str) -> bool {    Path::new(p).exists() && Path::new(p).is_dir() }
 
 // The file is or not exist;
-pub fn file_exist(p: &str) -> bool {
-    Path::new(p).exists() && Path::new(p).is_file()
-}
+//pub fn file_exist(p: &str) -> bool {     Path::new(p).exists() && Path::new(p).is_file()}
 
-pub fn exist_file(p:&str)->DirFile{
-
+pub fn exist_file(p: &str) -> DirFile {
     if !Path::new(p).exists() {
         return DirFile::None;
     }
-    if Path::new(p).is_file(){
+    if Path::new(p).is_file() {
         return DirFile::File;
     }
 
-    if Path::new(p).is_dir(){
+    if Path::new(p).is_dir() {
         return DirFile::Directory;
     }
 
