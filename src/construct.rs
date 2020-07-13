@@ -8,3 +8,20 @@ struct DayStruct {
     vol:u32,
     reservation:u32
 }
+/*
+impl DayStruct {
+    fn save(&self){
+
+    }
+    fn from(&self){
+
+    }
+}
+
+ */
+
+struct origin {
+    from:String,
+    place:String,
+    filename:String,
+}
