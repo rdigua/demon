@@ -1,4 +1,4 @@
-struct DayStruct {
+pub struct DayStruct {
     date:u32,
     open:u32,
     high:u32,
@@ -8,6 +8,7 @@ struct DayStruct {
     vol:u32,
     reservation:u32
 }
+
 /*
 impl DayStruct {
     fn save(&self){
@@ -20,8 +21,9 @@ impl DayStruct {
 
  */
 
-struct origin {
+pub struct Origin {
     from:String,
     place:String,
     filename:String,
+    db:String,
 }
