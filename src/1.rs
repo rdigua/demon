@@ -113,4 +113,19 @@ impl Turn for DayStruct {
     reservation:u32
 }
 StockData;
+CREATE TABLE day_dealing(
+
+number: INTEGER,
+	number:INTEGER,
+	date:INTEGER,
+	open:INTEGER,
+	high:INTEGER,
+	low:INTEGER,
+	close:INTEGER,
+	amount:INTEGER,
+	vol:INTEGER,
+	reservation:INTEGER,
+	constraint keyname primary key (number,date),
+
+)
 */
