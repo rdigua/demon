@@ -10,11 +10,11 @@ pub struct DayStruct {
 }
 
 impl DayStruct{
-    fn from_u32(s:Vec<u32>)->Vec<DayStruct>{
-        let l=s.len();
+    fn from_u32(a:Vec<u32>)->Vec<DayStruct>{
+        let l=a.len();
        // let d=DayStruct;
-        let r:Vec<DayStruct>=Vec::new();
-        if s%8 !=0 {
+        let mut r:Vec<DayStruct>=Vec::new();
+        if l%8 !=0 {
             return r;
         }
         for i in 0..l{
@@ -29,7 +29,7 @@ impl DayStruct{
                     vol:a[i+6],
                     reservation:a[i+7]
                 };
-                re.push(d);
+                r.push(d);
             }
         }
         r
