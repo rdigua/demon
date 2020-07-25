@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -21,20 +18,15 @@
     </expand>
     <select />
   </component>
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
-  </component>
-  <component name="CMakeSettings">
-    <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
-    </configurations>
-  </component>
   <component name="CargoProjects">
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e6a644c-ce3b-41cf-9809-e50fec00114f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+    <list default="true" id="f19df641-2c56-4cfa-9ff4-c0276aac53f5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/sqlite.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/demon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/demon.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,19 +44,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="d897mejx" />
+    <option name="directoryName" value="13c87mvb" />
   </component>
-  <component name="ProjectId" id="1eXGktkom4MdL9QZHlzDfVAVoZi" />
+  <component name="ProjectId" id="1fAxasr6UexcVndRut01VClU2X3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -75,16 +63,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0e6a644c-ce3b-41cf-9809-e50fec00114f" name="Default Changelist" comment="" />
-      <created>1595665737890</created>
+      <changelist id="f19df641-2c56-4cfa-9ff4-c0276aac53f5" name="Default Changelist" comment="" />
+      <created>1595674766203</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1595665737890</updated>
+      <updated>1595674766203</updated>
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -99,17 +84,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="707" y="343" key="#Notifications" timestamp="1594460701398">
+    <state x="695" y="343" key="#Notifications" timestamp="1595674809370">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="707" y="343" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1594460701398" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1594487485902">
+    <state x="695" y="343" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1595674809370" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1595676331173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594487485902" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1595081135832">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595081135832" />
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595676331173" />
   </component>
 </project>
