@@ -1,28 +1,72 @@
-use demon::functions::{DirFile, exist_file};
-use rusqlite::{Connection, Result, NO_PARAMS};
-use std::io::Error;
+///check sqlite.
+/// 
+/// 
 
-//use demon::functions::{DirFile,exist_file,file_exist,exist_dir};
-fn main() {
-    let day_db = Connection::open("day.db");
-    match day_db {
-        Ok(db) => {
-            if let Ok(k) = db.execute(
-                "CREATE TABLE day_dealing(number integer,date integer,open integer,high integer,low integer,close integer,amount integer,vol integer,reservation integer, constraint keyname primary key (number,date));",
-                NO_PARAMS,
-            ) {
-                println!("{:#?}", k);
-            } else {
-                // eprintln!(Error::last_os_error());
-                println!("some errors.");
-            }
+
+use rusqlite::NO_PARAMS;
+use rusqlite::{Connection, Result};
+use std::collections::HashMap;
+
+#[derive(Debug)]
+struct Cat {
+    name: String,
+    color: String,
+}
+
+fn main() -> Result<()> {
+    let conn = Connection::open("cats.db")?;
+
+    conn.execute(
+        "create table if not exists cat_colors (
+             id integer primary key,
+             name text not null unique
+         )",
+        NO_PARAMS,
+    )?;
+    conn.execute(
+        "create table if not exists cats (
+             id integer primary key,
+             name text not null,
+             color_id integer not null references cat_colors(id)
+         )",
+        NO_PARAMS,
+    )?;
+
+
+    let mut cat_colors = HashMap::new();
+    cat_colors.insert(String::from("Blue"), vec!["Tigger", "Sammy"]);
+    cat_colors.insert(String::from("Black"), vec!["Oreo", "Biscuit"]);
+
+    for (color, catnames) in &cat_colors {
+        conn.execute(
+            "INSERT INTO cat_colors (name) values (?1)",
+            &[&color.to_string()],
+        )?;
+        let last_id: String = conn.last_insert_rowid().to_string();
+
+        for cat in catnames {
+            conn.execute(
+                "INSERT INTO cats (name, color_id) values (?1, ?2)",
+                &[&cat.to_string(), &last_id],
+            )?;
         }
-        Err(e) => println!("{:#?}", e),
     }
-    match exist_file("src") {
-        DirFile::File => { println!("Readme.md is file.") }
-        DirFile::Directory => { println!("src is directory.") }
-        DirFile::None => { println!("Readme.md is not exists.") }
+    let mut stmt = conn.prepare(
+        "SELECT c.name, cc.name from cats c
+         INNER JOIN cat_colors cc
+         ON cc.id = c.color_id;",
+    )?;
+
+    let cats = stmt.query_map(NO_PARAMS, |row| {
+        Ok(Cat {
+            name: row.get(0)?,
+            color: row.get(1)?,
+        })
+    })?;
+
+    for cat in cats {
+        println!("Found cat {:?}", cat);
     }
-    //println!("{}",file_exist("go"));
+
+    Ok(())
 }
