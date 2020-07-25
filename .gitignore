@@ -12,3 +12,7 @@ Cargo.lock
 
 # These are executable files.
 **/*.ext
+
+# Added by cargo
+
+/target
