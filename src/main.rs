@@ -1,3 +1,49 @@
+//mod db;
+//use db::data;
+use dirs;
+
+fn main() {
+    use std::path::Path;
+
+    let path = Path::new("foo.rs");
+    println!("{:?};{:?};{:?}", path, path.extension(), path.file_stem());
+    //assert_eq!("rs", path.extension().unwrap());
+    println!("{:?};{:?};{:?};{:?}", dirs::home_dir(),
+// Lin: Some(/home/alice)
+// Win: Some(C:\Users\Alice)
+// Mac: Some(/Users/Alice)
+
+             dirs::audio_dir(),
+// Lin: Some(/home/alice/Music)
+// Win: Some(C:\Users\Alice\Music)
+// Mac: Some(/Users/Alice/Music)
+
+             dirs::config_dir(),
+// Lin: Some(/home/alice/.config)
+// Win: Some(C:\Users\Alice\AppData\Roaming)
+// Mac: Some(/Users/Alice/Library/Application Support)
+
+             dirs::executable_dir());
+    // Lin: Some(/home/alice/.local/bin)
+// Win: None
+// Mac: None
+
+    fn add_one(x: i32) -> i32 {
+        x*x
+    }
+
+    fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {
+        f(arg) + f(arg)
+    }
+
+    //fn k() {
+        let answer = do_twice(add_one, 5);
+
+        println!("The answer is: {}", answer);
+    //}
+
+}
+/*
 use rusqlite::NO_PARAMS;
 use rusqlite::{Connection, Result};
 use std::collections::HashMap;
@@ -65,3 +111,6 @@ fn main() -> Result<()> {
 
     Ok(())
 }
+
+
+ */

@@ -23,10 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f19df641-2c56-4cfa-9ff4-c0276aac53f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sqlite.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/demon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/demon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conception/aboutrusqlite.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conception/draft20200712.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conception/exampleofrusqlite.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conception/memo.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +50,17 @@
     <option name="directoryName" value="13c87mvb" />
   </component>
   <component name="ProjectId" id="1fAxasr6UexcVndRut01VClU2X3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../simple/lazy/src/main.rs" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -83,11 +91,18 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="695" y="343" key="#Notifications" timestamp="1595674809370">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="695" y="343" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1595674809370" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1595906794242">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595906794242" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1595676331173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
