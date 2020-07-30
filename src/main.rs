@@ -1,116 +1,64 @@
-//mod db;
-//use db::data;
-use dirs;
-
-fn main() {
-    use std::path::Path;
-
-    let path = Path::new("foo.rs");
-    println!("{:?};{:?};{:?}", path, path.extension(), path.file_stem());
-    //assert_eq!("rs", path.extension().unwrap());
-    println!("{:?};{:?};{:?};{:?}", dirs::home_dir(),
-// Lin: Some(/home/alice)
-// Win: Some(C:\Users\Alice)
-// Mac: Some(/Users/Alice)
-
-             dirs::audio_dir(),
-// Lin: Some(/home/alice/Music)
-// Win: Some(C:\Users\Alice\Music)
-// Mac: Some(/Users/Alice/Music)
-
-             dirs::config_dir(),
-// Lin: Some(/home/alice/.config)
-// Win: Some(C:\Users\Alice\AppData\Roaming)
-// Mac: Some(/Users/Alice/Library/Application Support)
-
-             dirs::executable_dir());
-    // Lin: Some(/home/alice/.local/bin)
-// Win: None
-// Mac: None
-
-    fn add_one(x: i32) -> i32 {
-        x*x
-    }
-
-    fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {
-        f(arg) + f(arg)
-    }
-
-    //fn k() {
-        let answer = do_twice(add_one, 5);
-
-        println!("The answer is: {}", answer);
-    //}
-
-}
-/*
-use rusqlite::NO_PARAMS;
-use rusqlite::{Connection, Result};
-use std::collections::HashMap;
-
-#[derive(Debug)]
-struct Cat {
-    name: String,
-    color: String,
-}
-
-fn main() -> Result<()> {
-    let conn = Connection::open("cats.db")?;
-
-    conn.execute(
-        "create table if not exists cat_colors (
-             id integer primary key,
-             name text not null unique
-         )",
-        NO_PARAMS,
-    )?;
-    conn.execute(
-        "create table if not exists cats (
-             id integer primary key,
-             name text not null,
-             color_id integer not null references cat_colors(id)
-         )",
-        NO_PARAMS,
-    )?;
-
-
-    let mut cat_colors = HashMap::new();
-    cat_colors.insert(String::from("Blue"), vec!["Tigger", "Sammy"]);
-    cat_colors.insert(String::from("Black"), vec!["Oreo", "Biscuit"]);
-
-    for (color, catnames) in &cat_colors {
-        conn.execute(
-            "INSERT INTO cat_colors (name) values (?1)",
-            &[&color.to_string()],
-        )?;
-        let last_id: String = conn.last_insert_rowid().to_string();
-
-        for cat in catnames {
-            conn.execute(
-                "INSERT INTO cats (name, color_id) values (?1, ?2)",
-                &[&cat.to_string(), &last_id],
-            )?;
+fn loop_then_return(mut counter: i32) -> i32 {
+    loop {
+        counter += 1;
+        if counter % 50 == 0 {
+            break;
         }
     }
-    let mut stmt = conn.prepare(
-        "SELECT c.name, cc.name from cats c
-         INNER JOIN cat_colors cc
-         ON cc.id = c.color_id;",
-    )?;
-
-    let cats = stmt.query_map(NO_PARAMS, |row| {
-        Ok(Cat {
-            name: row.get(0)?,
-            color: row.get(1)?,
-        })
-    })?;
-
-    for cat in cats {
-        println!("Found cat {:?}", cat);
-    }
-
-    Ok(())
+    counter
 }
 
+fn main() {
+    let my_number;
 
- */
+    {
+        // Pretend we need to have this code block
+        let number = {
+            // Pretend there is code here to make a number
+            7
+        };
+
+        my_number = loop_then_return(number);
+    }
+
+    println!("{}", my_number);
+    let my_number;
+    {
+        my_number = 50;
+    }
+
+    println!("{}", my_number);
+
+    let array_of_ten = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    let three_to_five = &array_of_ten[2..5];
+    let start_at_two = &array_of_ten[1..];
+    let end_at_five = &array_of_ten[..5];
+    let everything = &array_of_ten[..];
+
+    println!("Three to five: {:?},
+start at two: {:?}
+end at five: {:?}
+everything: {:?}", three_to_five, start_at_two, end_at_five, everything);
+    let vec_of_ten = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // Everything is the same except we added vec!
+    let three_to_five = &vec_of_ten[2..5];
+    let start_at_two = &vec_of_ten[1..];
+    let end_at_five = &vec_of_ten[..5];
+    let everything = &vec_of_ten[..];
+
+    println!("Three to five: {:?},
+start at two: {:?}
+end at five: {:?}
+everything: {:?}", three_to_five, start_at_two, end_at_five, everything);
+    let mut num_vec = Vec::with_capacity(8); // Give it capacity 8
+    num_vec.push('a'); // add one character
+    println!("{}", num_vec.capacity()); // prints 8
+    num_vec.push('a'); // add one more
+    println!("{}", num_vec.capacity()); // prints 8
+    num_vec.push('a'); // add one more
+    println!("{}", num_vec.capacity()); // prints 8.
+    num_vec.push('a'); // add one more
+    num_vec.push('a'); // add one more // Now we have 5 elements
+    println!("{}", num_vec.capacity()); // Still 8
+}
