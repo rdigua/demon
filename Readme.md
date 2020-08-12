@@ -1,5 +1,7 @@
 # Readme
 
+An experiment.
+
 It is some think of stock market.
 
 A little tryout to scrutiny my design. 

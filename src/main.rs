@@ -1,3 +1,25 @@
+use std::fs::OpenOptions;
+use std::io::Read;
+use hex_slice::AsHex;
+
+fn main() -> Result<(), std::io::Error> {
+
+    // open our ext4 partition, READ-ONLY.
+    let mut file = OpenOptions::new().read(true).open("/dev/sda1")?;
+
+    // allocate a 128-byte buffer
+    let mut buf = vec![0u8; 128];
+
+    // read the first 128 bytes of the file
+    file.read_exact(&mut buf)?;
+
+    // print it as hexadecimal
+    println!("{:x}", buf.as_hex());
+
+    Ok(())
+}
+
+/*
 // import everything we need
 use std::{
     fs::File,
@@ -29,7 +51,7 @@ fn main() -> Result<(), Error> {
     // everything went fine, signal sucess with an empty (tuple) result.
     Ok(())
 }
-/*
+
 use std::{
     io::Error,
     fs::File,
