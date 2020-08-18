@@ -1,3 +1,4 @@
+/*mod assert;
 use std::fs::OpenOptions;
 use std::io::Read;
 use hex_slice::AsHex;
@@ -19,7 +20,7 @@ fn main() -> Result<(), std::io::Error> {
     Ok(())
 }
 
-/*
+
 // import everything we need
 use std::{
     fs::File,
@@ -80,16 +81,11 @@ fn main() -> Result<(), Error> {
 
     Ok(())
 }
+*/
 
-const MY_DATA: [i8; 3] = [1, 2, 3];
 
 fn main() {
-    let mut my_data = [2; 3];
-    my_data[0] = 1;
-    my_data[2] = 3;
-	println!("MY_DATA is :::  {:#?}",MY_DATA);
-	println!("my_data is :::{:#?}",my_data);
-//    assert_eq!(MY_DATA, my_data);
+
     let s = "112225322555";
     let n = 2;
 
@@ -130,4 +126,3 @@ fn main() {
 
 }
 
- */
