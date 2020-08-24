@@ -1,6 +1,5 @@
 begin
 CREATE TABLE day_dealing if not exists day_dealing(
-    number: INTEGER,
 	number:INTEGER,
 	date:INTEGER,
 	open:INTEGER,
@@ -11,7 +10,6 @@ CREATE TABLE day_dealing if not exists day_dealing(
 	vol:INTEGER,
 	reservation:INTEGER,
 	constraint KeyName primary key (number,date),
-
 )
 end;
 
