@@ -1,6 +1,5 @@
 begin
 CREATE TABLE day_dealing if not exists day_dealing(
-    number: INTEGER,
 	number:INTEGER,
 	date:INTEGER,
 	open:INTEGER,
