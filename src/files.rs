@@ -2,6 +2,18 @@
 use std::fs;
 use std::io;
 use std::path::Path;
+
+struct date_file{
+	path:AsRef<Path>;
+	date_from:String;
+	date_now:String;	
+}
+
+struct data{
+		filename:AsRef<Path>;
+		tablenames:Vec<String>;
+}
+
 pub fn file_to_string<P: AsRef<Path>>(path: P) ->io::Result<String>{
 	 fs::read_to_string(path)
 }

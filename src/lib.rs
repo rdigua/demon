@@ -1,4 +1,5 @@
 pub mod files;
+pub mod strings;
 
 //use files;
 
